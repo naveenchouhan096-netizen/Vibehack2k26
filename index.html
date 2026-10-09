@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>RegretMart™ — The World's Worst Online Store</title>
+  <meta name="description" content="Shop now. Regret instantly. A satirical store of things you never needed." />
+  <meta property="og:title" content="RegretMart™ — Shop now. Regret instantly." />
+  <meta property="og:description" content="Bottled Silence, Pre-owned Wi-Fi, Square Wheels and more. Nothing here is real." />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <div id="sanity-bar" class="sanity-bar" hidden>
+    Sanity Mode: boring, but it works.
+    <button class="btn-brut bg-card sm" data-toggle-sanity>Re-enable chaos?</button>
+  </div>
+
+  <!-- Reveal Mode bar -->
+  <div id="reveal-bar" class="reveal-bar" hidden>
+    <span>🔍 Reveal Mode: <b id="reveal-count">0</b> dark patterns found on this page.</span>
+    <a href="#guide" class="btn-brut bg-yel sm">Read the field guide</a>
+    <button class="btn-brut bg-card sm" data-reveal-off>Turn off</button>
+  </div>
+
+  <!-- Marquee -->
+  <div class="marquee-wrap chaos-bg" aria-label="BUY BUY BUY (but why)">
+    <div class="marquee">
+      <span id="marquee-a"></span><span id="marquee-b"></span>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="site-header chaos-bg">
+    <div class="container header-inner">
+      <a href="#" class="logo brut-sm" id="logo" role="button" aria-pressed="false" title="Do not click this">RegretMart<sup>™</sup></a>
+      <input id="search" class="brut-sm search" aria-label="Search products" placeholder="Don't search here" />
+      <a href="#cart" id="cart-link" class="cart-link brut-sm" aria-label="Cart: 0 items">
+        🛒 <span id="cart-roman">N</span>
+        <span class="cart-tip" id="cart-tip">Actually 0 · ₹0</span>
+      </a>
+      <button id="reveal" class="brut-sm reveal-btn" aria-pressed="false" title="Reveal the dark patterns on this page">🔍 Reveal</button>
+      <button id="mute" class="brut-sm mute" aria-label="Toggle sound" title="Sound on/off">🔊</button>
+      <button id="fire" class="brut-sm fire-btn" aria-pressed="false" aria-label="Set everything on fire" title="Set everything on fire">🔥</button>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="container hero">
+    <div>
+      <span class="sticker bg-rad rot3">NEW! (since 1998)</span>
+      <h1>Everything you <span class="never">never</span> needed!</h1>
+      <p class="lead">Curated useless goods, shipped eventually. Shop now. <b>Regret instantly.</b></p>
+      <div class="hero-btns">
+        <a href="#shop" class="btn-brut bg-rad lg">Shop Regret</a>
+        <button class="btn-brut bg-card lg" data-toggle-sanity>Help me, I'm lost</button>
+      </div>
+      <div class="sale brut-sm chaos-bg">⏰ Sale ends <span class="price">YESTERDAY</span> · 00:00:00 ago</div>
+    </div>
+    <div class="hero-art">
+      <div class="float brut f1 bg-yel" style="animation-delay:0s" role="button" tabindex="0" aria-label="Jar of Nothing: open it"><span class="ico" aria-hidden="true">🫙</span></div>
+      <div class="float brut f2 bg-cya" style="animation-delay:1s" role="button" tabindex="0" aria-pressed="false" aria-label="Umbrella: make it rain"><span class="ico" aria-hidden="true">☂️</span></div>
+      <div class="float brut f3 bg-mag" style="animation-delay:2s" role="button" tabindex="0" aria-label="Shoe: kick"><span class="ico" aria-hidden="true">👟</span></div>
+      <div class="float brut f4 bg-rad" style="animation-delay:1.5s" role="button" tabindex="0" aria-label="Square wheel: try to roll"><span class="ico" aria-hidden="true">⬛</span></div>
+      <div class="float brut f5 bg-ora" style="animation-delay:.5s" role="button" tabindex="0" aria-label="Haunted pen: write"><span class="ico" aria-hidden="true">🖊️</span></div>
+      <span class="sticker abs s1 bg-card">Verified by Nobody</span>
+      <span class="sticker abs s2 bg-pur light">100% Probably Secure</span>
+    </div>
+  </section>
+
+  <!-- Dashboard -->
+  <section id="cart" class="container">
+    <h2 class="section-title rot1">📊 Your Regret Dashboard</h2>
+    <div class="stats">
+      <div class="brut card-lift stat bg-mag light">
+        <p class="stat-label">Regret Meter</p>
+        <div class="meter"><div id="meter-fill"></div></div>
+        <p class="small"><span id="meter-text">0</span>% regretful</p>
+      </div>
+      <div class="brut card-lift stat bg-cya">
+        <p class="stat-label">Items in Cart</p>
+        <p class="price big" id="stat-count">0</p>
+        <p class="small">Total <span id="stat-total">₹0</span></p>
+      </div>
+      <div class="brut card-lift stat bg-yel">
+        <p class="stat-label">Regret Points</p>
+        <p class="price big" id="stat-points">100</p>
+        <p class="small">-7 per purchase</p>
+      </div>
+      <div class="brut card-lift stat bg-rad">
+        <p class="stat-label">Time wasted here</p>
+        <p class="price big" id="stat-time">00:00</p>
+        <p class="small">and counting</p>
+      </div>
+      <div class="brut card-lift stat bg-ora">
+        <p class="stat-label">Live visitors</p>
+        <p class="price big">-3</p>
+        <p class="small">they left before arriving</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Products -->
+  <section id="shop" class="container shop">
+    <div class="shop-head">
+      <h2 class="section-title rotm1 big-title">The Regret Collection</h2>
+      <label class="sort-label">
+        Sort:
+        <select id="sort" class="brut-sm" aria-label="Sort products">
+          <option value="best">Best</option>
+          <option value="price">Cheapest regret</option>
+          <option value="none">Random-ish</option>
+        </select>
+      </label>
+    </div>
+    <p id="empty" class="brut bg-card pad" hidden>We told you not to search here. Nothing found.</p>
+    <div id="grid" class="grid products"></div>
+  </section>
+
+  <!-- Reviews -->
+  <section class="container reviews">
+    <h2 class="section-title rot1">Real* Reviews</h2>
+    <div class="grid three">
+      <figure class="brut card-lift review bg-yel rotm2"><div class="stars">★★★★★</div><blockquote>"Didn't receive. Loved it."</blockquote><figcaption>— Priya, still waiting</figcaption></figure>
+      <figure class="brut card-lift review bg-cya rot1"><div class="stars">★★★★★</div><blockquote>"The Jar of Nothing exceeded my expectations of nothing."</blockquote><figcaption>— Arjun, Philosopher</figcaption></figure>
+      <figure class="brut card-lift review bg-rad rotm1"><div class="stars">★★★★★</div><blockquote>"My Pre-owned Wi-Fi still remembers its ex's password."</blockquote><figcaption>— Meera, Bengaluru</figcaption></figure>
+    </div>
+    <p class="tiny">*Not real.</p>
+  </section>
+
+  <!-- Dark Pattern Field Guide (shown in Reveal Mode) -->
+  <section id="guide" class="container guide" hidden>
+    <h2 class="section-title rotm1">🔍 Dark Pattern Field Guide</h2>
+    <p class="lead">Every joke on this page is a real trick used on real websites. Here is what each one is called.</p>
+    <div id="guide-grid" class="grid guide-grid"></div>
+    <p class="brut bg-yel pad guide-end">Real sites never label these. Now you can spot them yourself.</p>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer chaos-bg">
+    <div class="container footer-links" id="footer-links"></div>
+    <!-- Vibehack'26 scan-line banner -->
+    <div class="vibe-banner" aria-hidden="false">
+      <span class="vibe-smoke s1"></span><span class="vibe-smoke s2"></span><span class="vibe-smoke s3"></span>
+      <svg id="vibe-svg" viewBox="0 0 1000 200" role="img" aria-label="Vibehack'26" preserveAspectRatio="xMidYMid meet">
+        <defs>
+          <!-- thin horizontal lines that keep drifting downwards -->
+          <pattern id="vibe-lines" width="10" height="6" patternUnits="userSpaceOnUse">
+            <rect width="10" height="1.1" fill="#fff" />
+            <animateTransform attributeName="patternTransform" type="translate" from="0 0" to="0 6" dur="1.2s" repeatCount="indefinite" />
+          </pattern>
+          <!-- a bright band that sweeps across the letters -->
+          <linearGradient id="vibe-grad" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="500" y2="0" spreadMethod="repeat">
+            <stop offset="0" stop-color="#5b616b" />
+            <stop offset=".5" stop-color="#ffffff" />
+            <stop offset="1" stop-color="#5b616b" />
+            <animateTransform attributeName="gradientTransform" type="translate" from="0 0" to="500 0" dur="3.2s" repeatCount="indefinite" />
+          </linearGradient>
+          <mask id="vibe-mask" maskUnits="userSpaceOnUse" x="0" y="0" width="1000" height="200">
+            <text x="500" y="172" text-anchor="middle" textLength="980" lengthAdjust="spacingAndGlyphs"
+                  font-family="Impact, 'Arial Black', 'Anton', sans-serif" font-weight="900" font-size="195" fill="url(#vibe-lines)">Vibehack'26</text>
+          </mask>
+        </defs>
+        <rect width="1000" height="200" fill="url(#vibe-grad)" mask="url(#vibe-mask)" />
+      </svg>
+    </div>
+    <p class="container footer-note">RegretMart is a satire project. Nothing here is real. © Forever, sort of.</p>
+    <button data-toggle-sanity aria-label="Toggle sanity mode" title="sanity" class="secret"></button>
+  </footer>
+
+  <!-- Cart list (opens from the 🛒 in the header) -->
+  <div id="cart-modal" class="overlay" role="dialog" aria-modal="true" aria-labelledby="cart-title" hidden>
+    <div class="brut cart-box bg-card">
+      <button id="cart-x" class="x-btn" aria-label="Close cart">×</button>
+      <h2 id="cart-title">🛒 Your Checkout List</h2>
+      <p id="cart-empty" class="small">Nothing here yet. Suspiciously peaceful.</p>
+      <ul id="cart-items" class="cart-items"></ul>
+      <div id="cart-extras" class="cart-extras" hidden>
+        <p class="cart-extras-title">Extra charges we found for you</p>
+        <ul id="cart-fees" class="cart-fees"></ul>
+      </div>
+      <div class="cart-total">
+        <span id="cart-count-line">0 items</span>
+        <span class="cart-sum-wrap"><s id="cart-was" hidden>₹0</s> <span class="price" id="cart-sum">₹0</span></span>
+      </div>
+      <p id="cart-over" class="cart-over" hidden></p>
+      <button id="cart-close" class="btn-brut bg-yel sm mt">Keep regretting</button>
+    </div>
+  </div>
+
+  <!-- Splash -->
+  <div id="splash" class="overlay" role="dialog" aria-modal="true" aria-label="You won" hidden>
+    <div class="brut splash-box bg-yel">
+      <button id="splash-x" class="x-btn" aria-label="Close popup">×</button>
+      <p class="trophy">🏆</p>
+      <h2>YOU WON!</h2>
+      <p>A coupon for 0% off your next regret. Valid never.</p>
+      <button id="splash-claim" class="btn-brut bg-mag light mt">Claim nothing</button>
+      <button id="splash-decline" class="shame">No thanks, I enjoy paying full price 😢</button>
+    </div>
+  </div>
+
+  <!-- Cookies -->
+  <div id="cookies" class="cookies brut bg-card" role="dialog" aria-label="Cookie preferences" hidden>
+    <h3>🍪 We use cookies. Many.</h3>
+    <div class="cookie-list" id="cookie-list"></div>
+    <div class="cookie-btns">
+      <button class="btn-brut bg-rad sm" data-cookie-done>Accept All</button>
+      <button class="btn-brut bg-card sm" data-cookie-done>Save my mess</button>
+    </div>
+  </div>
+
+  <!-- Undo gravity -->
+  <button id="gravity-reset" class="btn-brut bg-yel sm gravity-reset" hidden>🍎 Undo gravity</button>
+
+  <!-- Stop rain -->
+  <button id="rain-reset" class="btn-brut bg-cya sm rain-reset" hidden>☀️ Stop rain</button>
+
+  <!-- Gary chat -->
+  <div id="gary" class="gary">
+    <div id="gary-panel" class="brut gary-panel bg-card" hidden>
+      <div class="gary-head bg-pur light">🤖 Gary (Support-ish)</div>
+      <div id="gary-msgs" class="gary-msgs"></div>
+      <form id="gary-form" class="gary-form">
+        <input id="gary-input" class="brut-sm" aria-label="Message Gary" placeholder="Ask Gary…" />
+        <button class="btn-brut bg-rad sm">Send</button>
+      </form>
+    </div>
+    <button id="gary-toggle" class="btn-brut bg-mag light gary-btn" aria-label="Open chat with Gary">💬</button>
+  </div>
+
+  <!-- Bandar (monkey mascot) -->
+  <div id="monkey" class="monkey" hidden>
+    <div id="monkey-bubble" class="monkey-bubble brut-sm" role="status" aria-live="polite"></div>
+    <img id="monkey-img" src="images/monkey.png" alt="Bandar the shopping monkey" draggable="false" />
+  </div>
+
+  <script src="js/products.js"></script>
+  <script src="js/sound.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

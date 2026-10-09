@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="path/to/your/screenshot.png" alt="Project Logo" width="200">
+  <img src="images/screenshot.png" alt="Project Logo" width="200">
 </p>
 
 # RegretMart

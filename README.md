@@ -1,4 +1,8 @@
-# RegretMart™
+<p align="center">
+  <img src="path/to/your/screenshot.png" alt="Project Logo" width="200">
+</p>
+
+# RegretMart
 
 A satirical "world's worst online store". Plain HTML + CSS + vanilla JS — no build step, no dependencies.
 
